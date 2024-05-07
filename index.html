@@ -110,18 +110,25 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // 計算從4/8到現在經過的天數
-        var startDate = new Date('2024-04-08');
-        var currentDate = new Date();
-        var timeDiff = currentDate.getTime() - startDate.getTime();
-        var daysTogether = Math.floor(timeDiff / (1000 * 3600 * 24)) + 1;
+        // 定義函數以更新日期和天數
+        function updateDateAndDays() {
+            // 計算從4/8到現在經過的天數
+            var startDate = new Date('2024-04-08T00:16:00');
+            var currentDate = new Date();
+            var timeDiff = currentDate.getTime() - startDate.getTime();
+            var daysTogether = Math.floor(timeDiff / (1000 * 3600 * 24)) + 1;
 
+            // 更新愛的訊息中的天數
+            var daysCountElement = document.getElementById('daysCount');
+            daysCountElement.innerText = daysTogether;
+        }
 
-        // 更新愛的訊息中的天數
-        var loveMessageElement = document.getElementById('loveMessage');
-        var daysCountElement = document.getElementById('daysCount');
-        daysCountElement.innerText = daysTogether;
-        
+        // 首次加載頁面時執行一次更新
+        updateDateAndDays();
+
+        // 每秒更新一次日期和天數
+        setInterval(updateDateAndDays, 1000);
+
         // 監聽最後一張圖片的動畫結束事件
         var gallery = document.querySelector('.gallery');
         var lastImage = gallery.lastElementChild;
