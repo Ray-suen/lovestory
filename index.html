@@ -22,30 +22,35 @@
         }
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 250px)); /* 調整網格配置 */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
             grid-gap: 10px;
-            justify-content: center; /* 將內容水平置中 */
+            justify-content: center;
         }
         .gallery img {
-            width: 100%; /* 讓圖片填滿容器 */
+            width: 100%;
             height: auto;
-            margin: auto; /* 將圖片置中 */
+            margin: auto;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
         }
-        .gallery video {
-            width: 100%; /* 讓影片填滿容器 */
-            height: auto;
-            margin: auto; /* 將影片置中 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
         .media-container {
-            margin-top: 20px; /* 上方間距 */
-            display: flex; /* 使用彈性盒子模型 */
-            justify-content: center; /* 將內容水平置中 */
-            align-items: center; /* 將內容垂直置中 */
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         footer {
-            background-color: transparent; /* 將背景色設置為透明 */
+            background-color: transparent;
             color: #fff;
-            padding: 0; /* 移除底部的 padding */
+            padding: 0;
             text-align: center;
             position: fixed;
             bottom: 0;
@@ -55,6 +60,7 @@
             font-size: 32px;
             text-align: center;
             margin-bottom: 20px;
+            opacity: 0; /* 初始透明度為 0，隱藏元素 */
         }
         .heart {
             color: red;
@@ -66,7 +72,7 @@
 <body>
 
 <header>
-    <h1>我們的回憶</h1>
+    <h1 id="daysTogether">我們的回憶 - 第0天</h1>
 </header>
 
 <main>
@@ -74,24 +80,24 @@
         我喜歡你寶貝 三十天快樂<span class="heart">♥</span>
     </div>
     <div class="gallery">
-        <img src="S__68337666_0.jpg" alt="照片1">
-        <img src="S__68337668_0.jpg" alt="照片2">
-        <img src="S__68337669_0.jpg" alt="照片3">
-        <img src="S__68337672_0.jpg" alt="照片4" style="width: 250px;"> <!-- 使用 style 屬性設置照片寬度 -->
-        <img src="S__68337670_0.jpg" alt="照片5" style="width: 250px;"> <!-- 使用 style 屬性設置照片寬度 -->
-        <img src="S__68337674_0.jpg" alt="照片6" style="width: 250px;"> <!-- 使用 style 屬性設置照片寬度 -->
+        <img src="S__68337666_0.jpg" alt="照片1" style="animation-delay: 1s;"> <!-- 第一張圖片延遲 2 秒 -->
+        <img src="S__68337668_0.jpg" alt="照片2" style="animation-delay: 2s;"> <!-- 延遲 3 秒 -->
+        <img src="S__68337669_0.jpg" alt="照片3" style="animation-delay: 3s;"> <!-- 延遲 4 秒 -->
+        <img src="S__68337672_0.jpg" alt="照片4" style="width: 250px; animation-delay: 4s;"> <!-- 延遲 5 秒 -->
+        <img src="S__68337670_0.jpg" alt="照片5" style="width: 250px; animation-delay: 5s;"> <!-- 延遲 6 秒 -->
+        <img src="S__68337674_0.jpg" alt="照片6" style="width: 250px; animation-delay: 6s;"> <!-- 延遲 7 秒 -->
   
         <!-- 加入更多照片 -->
     </div>
 
     <!-- 影片容器 -->
     <div class="media-container">
-        <video controls autoplay loop muted style="width: 50%;">
+        <video controls autoplay loop muted style="width: 50%; animation-delay: 8s;"> <!-- 延遲 8 秒 -->
             <source src="736783047.133058.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
-        <video controls autoplay loop muted style="width: 50%;">
+        <video controls autoplay loop muted style="width: 50%; animation-delay: 8s;"> <!-- 延遲 8 秒 -->
             <source src="736783047.037772.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -101,6 +107,30 @@
 <footer>
     <!-- 移除文字內容 -->
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 計算從4/8到現在經過的天數
+        var startDate = new Date('2024-04-08');
+        var currentDate = new Date();
+        var timeDiff = currentDate.getTime() - startDate.getTime();
+        var daysTogether = Math.floor(timeDiff / (1000 * 3600 * 24))+1;
+
+        // 更新標題中的交往天數
+        var daysTogetherElement = document.getElementById('daysTogether');
+        daysTogetherElement.innerText = '我們的回憶 - 第 ' + daysTogether + ' 天';
+        
+        // 監聽最後一張圖片的動畫結束事件
+        var gallery = document.querySelector('.gallery');
+        var lastImage = gallery.lastElementChild;
+
+        lastImage.addEventListener('animationend', function() {
+            // 當最後一張圖片的動畫結束時，顯示 ".love" 元素
+            var loveElement = document.querySelector('.love');
+            loveElement.style.opacity = '1'; // 顯示元素
+        });
+    });
+</script>
 
 </body>
 </html>
