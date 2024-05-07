@@ -31,6 +31,17 @@
             height: auto;
             margin: auto; /* 將圖片置中 */
         }
+        .gallery video {
+            width: 100%; /* 讓影片填滿容器 */
+            height: auto;
+            margin: auto; /* 將影片置中 */
+        }
+        .media-container {
+            margin-top: 20px; /* 上方間距 */
+            display: flex; /* 使用彈性盒子模型 */
+            justify-content: center; /* 將內容水平置中 */
+            align-items: center; /* 將內容垂直置中 */
+        }
         footer {
             background-color: transparent; /* 將背景色設置為透明 */
             color: #fff;
@@ -71,6 +82,19 @@
         <img src="S__68337674_0.jpg" alt="照片6" style="width: 250px;"> <!-- 使用 style 屬性設置照片寬度 -->
   
         <!-- 加入更多照片 -->
+    </div>
+
+    <!-- 影片容器 -->
+    <div class="media-container">
+        <video controls autoplay loop muted style="width: 50%;">
+            <source src="736783047.133058.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <video controls autoplay loop muted style="width: 50%;">
+            <source src="736783047.037772.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 </main>
 
