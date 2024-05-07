@@ -72,12 +72,12 @@
 <body>
 
 <header>
-    <h1 id="daysTogether">我們的回憶 - 第0天</h1>
+    <h1 id="daysTogether">我們的回憶</h1>
 </header>
 
 <main>
-    <div class="love">
-        我喜歡你寶貝 三十天快樂<span class="heart">♥</span>
+    <div class="love" id="loveMessage">
+        我喜歡你寶貝 <span id="daysCount">0</span> 天快樂<span class="heart">♥</span>
     </div>
     <div class="gallery">
         <img src="S__68337666_0.jpg" alt="照片1" style="animation-delay: 1s;"> <!-- 第一張圖片延遲 2 秒 -->
@@ -114,11 +114,13 @@
         var startDate = new Date('2024-04-08');
         var currentDate = new Date();
         var timeDiff = currentDate.getTime() - startDate.getTime();
-        var daysTogether = Math.floor(timeDiff / (1000 * 3600 * 24))+1;
+        var daysTogether = Math.floor(timeDiff / (1000 * 3600 * 24)) + 1;
 
-        // 更新標題中的交往天數
-        var daysTogetherElement = document.getElementById('daysTogether');
-        daysTogetherElement.innerText = '我們的回憶 - 第 ' + daysTogether + ' 天';
+
+        // 更新愛的訊息中的天數
+        var loveMessageElement = document.getElementById('loveMessage');
+        var daysCountElement = document.getElementById('daysCount');
+        daysCountElement.innerText = daysTogether;
         
         // 監聽最後一張圖片的動畫結束事件
         var gallery = document.querySelector('.gallery');
