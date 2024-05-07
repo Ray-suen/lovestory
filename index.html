@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的網頁</title>
+    <title>我們的回憶</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,31 +20,62 @@
         main {
             padding: 20px;
         }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 250px)); /* 調整網格配置 */
+            grid-gap: 10px;
+            justify-content: center; /* 將內容水平置中 */
+        }
+        .gallery img {
+            width: 100%; /* 讓圖片填滿容器 */
+            height: auto;
+            margin: auto; /* 將圖片置中 */
+        }
         footer {
-            background-color: #333;
+            background-color: transparent; /* 將背景色設置為透明 */
             color: #fff;
-            padding: 10px;
+            padding: 0; /* 移除底部的 padding */
             text-align: center;
             position: fixed;
             bottom: 0;
             width: 100%;
+        }
+        .love {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .heart {
+            color: red;
+            font-size: 32px;
+            vertical-align: middle;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>歡迎來到我的網頁</h1>
+    <h1>我們的回憶</h1>
 </header>
 
 <main>
-    <h2>這是一個簡易網頁的範例</h2>
-    <p>你可以在這裡寫下你想要的內容。</p>
-    <p>這是段落的範例。</p>
+    <div class="love">
+        我喜歡你寶貝 三十天快樂<span class="heart">♥</span>
+    </div>
+    <div class="gallery">
+        <img src="S__68337666_0.jpg" alt="照片1">
+        <img src="S__68337668_0.jpg" alt="照片2">
+        <img src="S__68337669_0.jpg" alt="照片3">
+        <img src="S__68337672_0.jpg" alt="照片4" style="width: 250px;"> <!-- 使用 style 屬性設置照片寬度 -->
+        <img src="S__68337670_0.jpg" alt="照片5" style="width: 250px;"> <!-- 使用 style 屬性設置照片寬度 -->
+        <img src="S__68337674_0.jpg" alt="照片6" style="width: 250px;"> <!-- 使用 style 屬性設置照片寬度 -->
+  
+        <!-- 加入更多照片 -->
+    </div>
 </main>
 
 <footer>
-    <p>版權所有 &copy; 2024</p>
+    <!-- 移除文字內容 -->
 </footer>
 
 </body>
