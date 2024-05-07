@@ -67,14 +67,28 @@
             font-size: 32px;
             vertical-align: middle;
         }
+        audio {
+    width: 100%;
+    background-color: transparent; /* 將背景色設置為透明 */
+    padding: 10px;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: transparent;
+}
+
+audio::-webkit-media-controls-timeline {
+    height: 5px;
+    background-color: transparent; /* 將撥放條的背景色設置為透明 */
+}
+
+audio::-webkit-media-controls-play-button {
+    color: #fff;
+}
+
     </style>
 </head>
 <body>
-
-<audio autoplay>
-  <source src="music.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
 
 <header>
     <h1 id="daysTogether">我們的回憶</h1>
@@ -94,7 +108,7 @@
   
         <!-- 加入更多照片 -->
     </div>
-
+    
     <!-- 影片容器 -->
     <div class="media-container">
         <video controls autoplay loop muted style="width: 50%; animation-delay: 8s;"> <!-- 延遲 8 秒 -->
@@ -112,6 +126,11 @@
 <footer>
     <!-- 移除文字內容 -->
 </footer>
+
+<audio controls autoplay>
+  <source src="1.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
