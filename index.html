@@ -3,95 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/line-dog_favicon.jpeg" type="image/jpeg">
     <title>我們的回憶</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        main {
-            padding: 20px;
-        }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
-            grid-gap: 10px;
-            justify-content: center;
-        }
-        .gallery img {
-            width: 100%;
-            height: auto;
-            margin: auto;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        .media-container {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        footer {
-            background-color: transparent;
-            color: #fff;
-            padding: 0;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        .love {
-            font-size: 32px;
-            text-align: center;
-            margin-bottom: 20px;
-            opacity: 0; /* 初始透明度為 0，隱藏元素 */
-        }
-        .heart {
-            color: red;
-            font-size: 32px;
-            vertical-align: middle;
-        }
-        audio {
-    width: 100%;
-    background-color: transparent; /* 將背景色設置為透明 */
-    padding: 10px;
-}
-
-audio::-webkit-media-controls-panel {
-    background-color: transparent;
-}
-
-audio::-webkit-media-controls-timeline {
-    height: 5px;
-    background-color: transparent; /* 將撥放條的背景色設置為透明 */
-}
-
-audio::-webkit-media-controls-play-button {
-    color: #fff;
-}
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+
 <header>
-    <h1 id="daysTogether">我們的回憶</h1>
+    <!-- <h1 id="daysTogether">我們的回憶</h1> -->
+    <h1 id="daysTogether" style="line-height: 100px;margin: 0;">
+        <img src="img/line-dog1.gif" alt="線條小狗" style="height: 110px;vertical-align: middle; margin-bottom: 25px;">
+        我們的回憶
+    </h1>
 </header>
 
 <main>
@@ -99,25 +23,35 @@ audio::-webkit-media-controls-play-button {
         我喜歡你寶貝 <span id="daysCount">0</span> 天快樂<span class="heart">♥</span>
     </div>
     <div class="gallery">
-        <img src="S__68337666_0.jpg" alt="照片1" style="animation-delay: 1s;"> <!-- 第一張圖片延遲 2 秒 -->
-        <img src="S__68337668_0.jpg" alt="照片2" style="animation-delay: 2s;"> <!-- 延遲 3 秒 -->
-        <img src="S__68337669_0.jpg" alt="照片3" style="animation-delay: 3s;"> <!-- 延遲 4 秒 -->
-        <img src="S__68337672_0.jpg" alt="照片4" style="width: 250px; animation-delay: 4s;"> <!-- 延遲 5 秒 -->
-        <img src="S__68337670_0.jpg" alt="照片5" style="width: 250px; animation-delay: 5s;"> <!-- 延遲 6 秒 -->
-        <img src="S__68337674_0.jpg" alt="照片6" style="width: 250px; animation-delay: 6s;"> <!-- 7 秒 -->
-  
+        <img src="img/S__68337666_0.jpg" alt="照片1" style="animation-delay: 1s;"> <!-- 第一張圖片延遲 2 秒 -->
+        <img src="img/S__68337668_0.jpg" alt="照片2" style="animation-delay: 2s;"> <!-- 延遲 3 秒 -->
+        <img src="img/S__68337669_0.jpg" alt="照片3" style="animation-delay: 3s;"> <!-- 延遲 4 秒 -->
+        <img src="img/S__68337672_0.jpg" alt="照片4" style="width: 250px; animation-delay: 4s;"> <!-- 延遲 5 秒 -->
+        <img src="img/S__68337670_0.jpg" alt="照片5" style="width: 250px; animation-delay: 5s;"> <!-- 延遲 6 秒 -->
+        <img src="img/S__68337674_0.jpg" alt="照片6" style="width: 250px; animation-delay: 6s;"> <!-- 7 秒 -->
+        <img src="img/IMG_9707.JPG" alt="照片7" style="width: 250px; animation-delay: 7s;">
+        <img src="img/IMG_9711.JPG" alt="照片8" style="width: 250px; animation-delay: 8s;" >
+        <img src="img/IMG_9729.JPG" alt="照片9" style="width: 250px; animation-delay: 9s;">
+        <img src="img/IMG_9822.JPG" alt="照片10" style="width: 250px; animation-delay: 10s;">
+        <img src="img/IMG_9828.JPG" alt="照片11" style="width: 250px; animation-delay: 11s;">
+        <img src="img/IMG_9831.JPG" alt="照片12" style="width: 250px; animation-delay: 12s;">
+        <img src="img/IMG_9834.JPG" alt="照片13" style="width: 250px; animation-delay: 13s;">
+        <img src="img/IMG_9835.JPG" alt="照片14" style="width: 250px; animation-delay: 14s;">
+        <img src="img/IMG_9838.JPG" alt="照片15" style="width: 250px; animation-delay: 15s;">
+        <img src="img/IMG_9841.JPG" alt="照片16" style="width: 250px; animation-delay: 16s;">
+        <img src="img/IMG_9843.JPG" alt="照片17" style="width: 250px; animation-delay: 17s;">
         <!-- 加入更多照片 -->
     </div>
     
     <!-- 影片容器 -->
     <div class="media-container">
         <video controls autoplay loop muted style="width: 50%; animation-delay: 8s;"> <!-- 延遲 8 秒 -->
-            <source src="736783047.133058.mp4" type="video/mp4">
+            <source src="img/736783047.133058.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
         <video controls autoplay loop muted style="width: 50%; animation-delay: 8s;"> <!-- 延遲 8 秒 -->
-            <source src="736783047.037772.mp4" type="video/mp4">
+            <source src="img/736783047.037772.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
